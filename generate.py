@@ -225,7 +225,8 @@ def update_in_place(path, values):
         n_dots = len(dots.text.strip()) + len(data.text) - len(new)
         dots.text = " " + "." * max(1, n_dots) + " "
         data.text = new
-    tree.write(path, encoding="UTF-8", xml_declaration=True)
+    with open(path, "wb") as f:  # binary, so Windows doesn't write CRLF
+        tree.write(f, encoding="UTF-8", xml_declaration=True)
 
 
 def main():

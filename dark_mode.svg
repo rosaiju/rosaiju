@@ -50,7 +50,7 @@ text, tspan {white-space: pre;}
 <text x="405" y="101" fill="#c9d1d9" xml:space="preserve">
 <tspan x="405" y="101"><tspan>rohan@sainju</tspan><tspan class="cc"> -----------------------------------------------------</tspan></tspan>
 <tspan x="405" y="122"><tspan class="cc">. </tspan><tspan class="key">OS</tspan><tspan class="cc">:</tspan><tspan class="cc"> .. </tspan><tspan class="value">Morgan State University, B.S. Computer Science (Dec 2026)</tspan></tspan>
-<tspan x="405" y="143"><tspan class="cc">. </tspan><tspan class="key">Uptime</tspan><tspan class="cc">:</tspan><tspan class="cc" id="age_dots"> ........................... </tspan><tspan class="value" id="age_data">23 years, 10 months, 14 days</tspan></tspan>
+<tspan x="405" y="143"><tspan class="cc">. </tspan><tspan class="key">Uptime</tspan><tspan class="cc">:</tspan><tspan class="cc" id="age_dots"> ........................... </tspan><tspan class="value" id="age_data">23 years, 10 months, 15 days</tspan></tspan>
 <tspan x="405" y="164"><tspan class="cc">. </tspan><tspan class="key">Host</tspan><tspan class="cc">:</tspan><tspan class="cc"> ................... </tspan><tspan class="value">CAPC Lab, Open LLM Evaluation research</tspan></tspan>
 <tspan x="405" y="185"><tspan class="cc">. </tspan><tspan class="key">Kernel</tspan><tspan class="cc">:</tspan><tspan class="cc"> ........... </tspan><tspan class="value">Software Engineering / Data Engineering / AI</tspan></tspan>
 <tspan x="405" y="206"><tspan class="cc">. </tspan><tspan class="key">IDE</tspan><tspan class="cc">:</tspan><tspan class="cc"> ................................................... </tspan><tspan class="value">VS Code</tspan></tspan>

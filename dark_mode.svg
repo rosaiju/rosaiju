@@ -47,21 +47,20 @@ text, tspan {white-space: pre;}
 <tspan x="20" y="485">            x     w :xQ0QUULQQ0OZZZOQOL0mZ0Y:c      .  .:::.</tspan>
 <tspan x="20" y="497">              .;   , ~YCQZJzQ0ZZmwZwOQOmmLx,Y        ..:;----</tspan>
 </text>
-<text x="405" y="90" fill="#c9d1d9" xml:space="preserve">
-<tspan x="405" y="90"><tspan>rohan@sainju</tspan><tspan class="cc"> -----------------------------------------------------</tspan></tspan>
-<tspan x="405" y="111"><tspan class="cc">. </tspan><tspan class="key">OS</tspan><tspan class="cc">:</tspan><tspan class="cc"> .. </tspan><tspan class="value">Morgan State University, B.S. Computer Science (Dec 2026)</tspan></tspan>
-<tspan x="405" y="132"><tspan class="cc">. </tspan><tspan class="key">Uptime</tspan><tspan class="cc">:</tspan><tspan class="cc" id="age_dots"> ........................... </tspan><tspan class="value" id="age_data">23 years, 10 months, 14 days</tspan></tspan>
-<tspan x="405" y="153"><tspan class="cc">. </tspan><tspan class="key">Host</tspan><tspan class="cc">:</tspan><tspan class="cc"> ................... </tspan><tspan class="value">CAPC Lab, Open LLM Evaluation research</tspan></tspan>
-<tspan x="405" y="174"><tspan class="cc">. </tspan><tspan class="key">Kernel</tspan><tspan class="cc">:</tspan><tspan class="cc"> ........... </tspan><tspan class="value">Software Engineering / Data Engineering / AI</tspan></tspan>
-<tspan x="405" y="195"><tspan class="cc">. </tspan><tspan class="key">IDE</tspan><tspan class="cc">:</tspan><tspan class="cc"> ................................................... </tspan><tspan class="value">VS Code</tspan></tspan>
-<tspan x="405" y="237"><tspan class="cc">. </tspan><tspan class="key">Languages.Programming</tspan><tspan class="cc">:</tspan><tspan class="cc"> ......... </tspan><tspan class="value">Python, Go, Scala, SQL, Haskell</tspan></tspan>
-<tspan x="405" y="258"><tspan class="cc">. </tspan><tspan class="key">Languages.Web/Cloud</tspan><tspan class="cc">:</tspan><tspan class="cc"> ................................ </tspan><tspan class="value">React, AWS</tspan></tspan>
-<tspan x="405" y="279"><tspan class="cc">. </tspan><tspan class="key">Languages.Real</tspan><tspan class="cc">:</tspan><tspan class="cc"> ................................ </tspan><tspan class="value">English, Nepali</tspan></tspan>
-<tspan x="405" y="321"><tspan class="cc">- Contact --------------------------------------------------------</tspan></tspan>
-<tspan x="405" y="342"><tspan class="cc">. </tspan><tspan class="key">Email.Personal</tspan><tspan class="cc">:</tspan><tspan class="cc"> ......................... </tspan><tspan class="value">rohansainju7@gmail.com</tspan></tspan>
-<tspan x="405" y="363"><tspan class="cc">. </tspan><tspan class="key">LinkedIn</tspan><tspan class="cc">:</tspan><tspan class="cc"> .......................... </tspan><tspan class="value">linkedin.com/in/rohansainju</tspan></tspan>
-<tspan x="405" y="405"><tspan class="cc">- GitHub Stats ---------------------------------------------------</tspan></tspan>
-<tspan x="405" y="426"><tspan class="cc">. </tspan><tspan class="key">Repos</tspan><tspan class="cc">:</tspan><tspan class="cc" id="repo_dots"> ................... </tspan><tspan class="value" id="repo_data">11</tspan><tspan class="cc"> | </tspan><tspan class="key">Stars</tspan><tspan class="cc">:</tspan><tspan class="cc" id="star_dots"> ....................... </tspan><tspan class="value" id="star_data">1</tspan></tspan>
-<tspan x="405" y="447"><tspan class="cc">. </tspan><tspan class="key">Commits</tspan><tspan class="cc">:</tspan><tspan class="cc" id="commit_dots"> ................ </tspan><tspan class="value" id="commit_data">246</tspan><tspan class="cc"> | </tspan><tspan class="key">Followers</tspan><tspan class="cc">:</tspan><tspan class="cc" id="follower_dots"> ................... </tspan><tspan class="value" id="follower_data">1</tspan></tspan>
+<text x="405" y="101" fill="#c9d1d9" xml:space="preserve">
+<tspan x="405" y="101"><tspan>rohan@sainju</tspan><tspan class="cc"> -----------------------------------------------------</tspan></tspan>
+<tspan x="405" y="122"><tspan class="cc">. </tspan><tspan class="key">OS</tspan><tspan class="cc">:</tspan><tspan class="cc"> .. </tspan><tspan class="value">Morgan State University, B.S. Computer Science (Dec 2026)</tspan></tspan>
+<tspan x="405" y="143"><tspan class="cc">. </tspan><tspan class="key">Uptime</tspan><tspan class="cc">:</tspan><tspan class="cc" id="age_dots"> ........................... </tspan><tspan class="value" id="age_data">23 years, 10 months, 14 days</tspan></tspan>
+<tspan x="405" y="164"><tspan class="cc">. </tspan><tspan class="key">Host</tspan><tspan class="cc">:</tspan><tspan class="cc"> ................... </tspan><tspan class="value">CAPC Lab, Open LLM Evaluation research</tspan></tspan>
+<tspan x="405" y="185"><tspan class="cc">. </tspan><tspan class="key">Kernel</tspan><tspan class="cc">:</tspan><tspan class="cc"> ........... </tspan><tspan class="value">Software Engineering / Data Engineering / AI</tspan></tspan>
+<tspan x="405" y="206"><tspan class="cc">. </tspan><tspan class="key">IDE</tspan><tspan class="cc">:</tspan><tspan class="cc"> ................................................... </tspan><tspan class="value">VS Code</tspan></tspan>
+<tspan x="405" y="248"><tspan class="cc">. </tspan><tspan class="key">Languages.Programming</tspan><tspan class="cc">:</tspan><tspan class="cc"> ......... </tspan><tspan class="value">Python, Go, Scala, SQL, Haskell</tspan></tspan>
+<tspan x="405" y="269"><tspan class="cc">. </tspan><tspan class="key">Languages.Web/Cloud</tspan><tspan class="cc">:</tspan><tspan class="cc"> ................................ </tspan><tspan class="value">React, AWS</tspan></tspan>
+<tspan x="405" y="290"><tspan class="cc">. </tspan><tspan class="key">Languages.Real</tspan><tspan class="cc">:</tspan><tspan class="cc"> ................................ </tspan><tspan class="value">English, Nepali</tspan></tspan>
+<tspan x="405" y="332"><tspan class="cc">- Contact --------------------------------------------------------</tspan></tspan>
+<tspan x="405" y="353"><tspan class="cc">. </tspan><tspan class="key">Email.Personal</tspan><tspan class="cc">:</tspan><tspan class="cc"> ......................... </tspan><tspan class="value">rohansainju7@gmail.com</tspan></tspan>
+<tspan x="405" y="374"><tspan class="cc">. </tspan><tspan class="key">LinkedIn</tspan><tspan class="cc">:</tspan><tspan class="cc"> .......................... </tspan><tspan class="value">linkedin.com/in/rohansainju</tspan></tspan>
+<tspan x="405" y="416"><tspan class="cc">- GitHub Stats ---------------------------------------------------</tspan></tspan>
+<tspan x="405" y="437"><tspan class="cc">. </tspan><tspan class="key">Repos</tspan><tspan class="cc">:</tspan><tspan class="cc" id="repo_dots"> ................... </tspan><tspan class="value" id="repo_data">11</tspan><tspan class="cc"> | </tspan><tspan class="key">Commits</tspan><tspan class="cc">:</tspan><tspan class="cc" id="commit_dots"> ................... </tspan><tspan class="value" id="commit_data">246</tspan></tspan>
 </text>
 </svg>

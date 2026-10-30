@@ -42,34 +42,13 @@ def graphql(token, query, variables=None):
 def fetch_stats(token):
     # Public data only, so the numbers are the same whether this runs locally
     # (your own token) or in Actions (GITHUB_TOKEN, which can't see private repos).
-    data = graphql(token, """
-    query($login: String!, $cursor: String) {
+    user = graphql(token, """
+    query($login: String!) {
       user(login: $login) {
-        followers { totalCount }
         contributionsCollection { contributionYears }
-        repositories(first: 100, after: $cursor, ownerAffiliations: OWNER, privacy: PUBLIC, isFork: false) {
-          totalCount
-          pageInfo { hasNextPage endCursor }
-          nodes { stargazerCount }
-        }
+        repositories(ownerAffiliations: OWNER, privacy: PUBLIC, isFork: false) { totalCount }
       }
-    }""", {"login": USER})
-    user = data["user"]
-    repos = user["repositories"]
-    stars = sum(n["stargazerCount"] for n in repos["nodes"])
-    cursor = repos["pageInfo"]["endCursor"] if repos["pageInfo"]["hasNextPage"] else None
-    while cursor:
-        page = graphql(token, """
-        query($login: String!, $cursor: String) {
-          user(login: $login) {
-            repositories(first: 100, after: $cursor, ownerAffiliations: OWNER, privacy: PUBLIC, isFork: false) {
-              pageInfo { hasNextPage endCursor }
-              nodes { stargazerCount }
-            }
-          }
-        }""", {"login": USER, "cursor": cursor})["user"]["repositories"]
-        stars += sum(n["stargazerCount"] for n in page["nodes"])
-        cursor = page["pageInfo"]["endCursor"] if page["pageInfo"]["hasNextPage"] else None
+    }""", {"login": USER})["user"]
 
     # contributionsCollection spans at most one year, so ask for each year at once via aliases.
     years = user["contributionsCollection"]["contributionYears"]
@@ -85,10 +64,8 @@ def fetch_stats(token):
         commits = sum(v["totalCommitContributions"] for v in per_year.values())
 
     return {
-        "repos": repos["totalCount"],
-        "stars": stars,
+        "repos": user["repositories"]["totalCount"],
         "commits": commits,
-        "followers": user["followers"]["totalCount"],
     }
 
 
@@ -168,8 +145,7 @@ def info_lines(stats, up):
         field("LinkedIn", "linkedin.com/in/rohansainju"),
         [],
         header("GitHub Stats"),
-        pair("Repos", f"{stats['repos']:,}", "repo", "Stars", f"{stats['stars']:,}", "star"),
-        pair("Commits", f"{stats['commits']:,}", "commit", "Followers", f"{stats['followers']:,}", "follower"),
+        pair("Repos", f"{stats['repos']:,}", "repo", "Commits", f"{stats['commits']:,}", "commit"),
     ]
 
 
@@ -249,9 +225,7 @@ def main():
     values = {
         "age": up,
         "repo": f"{stats['repos']:,}",
-        "star": f"{stats['stars']:,}",
         "commit": f"{stats['commits']:,}",
-        "follower": f"{stats['followers']:,}",
     }
     for path, theme in FILES.items():
         if args.rebuild or not os.path.exists(path):

@@ -72,10 +72,41 @@ def background_mask(img, cols, rows):
         ]
         for x, y in grow:
             mask[y][x] = True
+    return keep_largest_region(mask)
+
+
+def keep_largest_region(mask):
+    """Mask out every subject region except the biggest one (the head), so bits of
+    shoulder cut off by the crop don't float around the portrait."""
+    rows, cols = len(mask), len(mask[0])
+    seen = [[False] * cols for _ in range(rows)]
+    regions = []
+    for sy in range(rows):
+        for sx in range(cols):
+            if mask[sy][sx] or seen[sy][sx]:
+                continue
+            region, queue = [], deque([(sx, sy)])
+            seen[sy][sx] = True
+            while queue:
+                x, y = queue.popleft()
+                region.append((x, y))
+                for nx, ny in ((x + 1, y), (x - 1, y), (x, y + 1), (x, y - 1)):
+                    if 0 <= nx < cols and 0 <= ny < rows and not mask[ny][nx] and not seen[ny][nx]:
+                        seen[ny][nx] = True
+                        queue.append((nx, ny))
+            regions.append(region)
+    regions.sort(key=len)
+    for region in regions[:-1]:
+        for x, y in region:
+            mask[y][x] = True
     return mask
 
 
-def to_ascii(gray, mask, dense_is_dark):
+def to_ascii(gray, mask, dense_is_dark, knee, gamma):
+    """Above `knee`, density rises at 40% speed, so a big dark mass (the hair, in the
+    light variant) stays lighter than the face features. `gamma` > 1 pushes low
+    densities down; the dark variant uses it so the half-lit hair edge doesn't turn
+    into a ring of letters around the head."""
     px = gray.load()
     cols, rows = gray.size
     top = len(RAMP) - 1
@@ -89,16 +120,28 @@ def to_ascii(gray, mask, dense_is_dark):
             level = px[x, y] / 255
             if dense_is_dark:
                 level = 1 - level
+            level **= gamma
+            if level > knee:
+                level = knee + (level - knee) * 0.4
             chars.append(RAMP[round(level * top)])
         lines.append("".join(chars).rstrip())
-    return lines
+
+    # drop empty rows above/below and shared indentation, so the art's box is its content
+    while lines and not lines[0]:
+        lines.pop(0)
+    while lines and not lines[-1]:
+        lines.pop()
+    indent = min(len(l) - len(l.lstrip()) for l in lines if l)
+    return [l[indent:] for l in lines]
 
 
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("image")
     ap.add_argument("--rows", type=int, default=40)
-    ap.add_argument("--crop", default="130,20,650,700", help="face box L,T,R,B in source pixels")
+    ap.add_argument("--crop", default="150,25,630,655", help="face box L,T,R,B in source pixels")
+    ap.add_argument("--knee", type=float, default=0.6, help="light variant: soften density above this level")
+    ap.add_argument("--dark-gamma", type=float, default=1.6, help="dark variant: >1 fades the hair edge")
     ap.add_argument("--gamma", type=float, default=1.0, help="<1 brightens midtones, >1 darkens")
     ap.add_argument("--local", type=int, default=24, help="local-contrast radius in source px")
     ap.add_argument("--strength", type=int, default=120, help="local-contrast amount (%%)")
@@ -132,11 +175,29 @@ def main():
         lambda v: round(255 * min(1, max(0, (v - lo) / max(1, hi - lo))) ** gamma)
     )
 
-    for name, dense_is_dark in (("ascii_light.txt", True), ("ascii_dark.txt", False)):
-        lines = to_ascii(gray, mask, dense_is_dark)
+    # Dark variant only: blank the outline cells that are really hair. They mix hair with
+    # the bright wall, so the contrast boost turns them into a ring of letters.
+    small = face.resize((cols, rows), Image.LANCZOS).load()
+    dark_mask = [row[:] for row in mask]
+    for y in range(rows):
+        for x in range(cols):
+            # past the top/left/right border counts as wall; the bottom border cuts the collar
+            on_edge = any(
+                y + dy < rows and (not (0 <= x + dx < cols and 0 <= y + dy) or mask[y + dy][x + dx])
+                for dx in (-1, 0, 1) for dy in (-1, 0, 1)
+            )
+            if not mask[y][x] and on_edge and sum(small[x, y]) / 3 < 140:
+                dark_mask[y][x] = True
+
+    variants = (
+        ("ascii_light.txt", mask, True, args.knee, 1.0),
+        ("ascii_dark.txt", dark_mask, False, 1.0, args.dark_gamma),
+    )
+    for name, variant_mask, dense_is_dark, knee, variant_gamma in variants:
+        lines = to_ascii(gray, variant_mask, dense_is_dark, knee, variant_gamma)
         with open(os.path.join(args.out, name), "w", encoding="utf-8", newline="\n") as f:
             f.write("\n".join(lines) + "\n")
-        print(f"wrote {name}: {cols}x{rows}")
+        print(f"wrote {name}: {max(map(len, lines))}x{len(lines)}")
 
 
 if __name__ == "__main__":

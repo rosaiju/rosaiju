@@ -43,12 +43,20 @@ def fetch_stats(token):
     # Public data only, so the numbers are the same whether this runs locally
     # (your own token) or in Actions (GITHUB_TOKEN, which can't see private repos).
     user = graphql(token, """
-    query($login: String!) {
+    query($login: String!, $merged: String!, $external: String!) {
       user(login: $login) {
         contributionsCollection { contributionYears }
         repositories(ownerAffiliations: OWNER, privacy: PUBLIC, isFork: false) { totalCount }
       }
-    }""", {"login": USER})["user"]
+      merged: search(query: $merged, type: ISSUE, first: 0) { issueCount }
+      external: search(query: $external, type: ISSUE, first: 0) { issueCount }
+    }""", {
+        "login": USER,
+        "merged": f"is:pr is:merged author:{USER}",
+        "external": f"is:pr is:merged author:{USER} -user:{USER}",
+    })
+    prs_merged, prs_external = user["merged"]["issueCount"], user["external"]["issueCount"]
+    user = user["user"]
 
     # contributionsCollection spans at most one year, so ask for each year at once via aliases.
     years = user["contributionsCollection"]["contributionYears"]
@@ -66,6 +74,8 @@ def fetch_stats(token):
     return {
         "repos": user["repositories"]["totalCount"],
         "commits": commits,
+        "prs_merged": prs_merged,
+        "prs_external": prs_external,
     }
 
 
@@ -92,13 +102,17 @@ def uptime(today):
 # ---------------------------------------------------------------- layout
 
 WIDTH, HEIGHT = 985, 530
-ART_FONT, ART_LINE, ART_X, ART_Y = 10, 12, 20, 29
-INFO_FONT, INFO_LINE, INFO_X = 14, 21, 405
-INFO_COLS = 66  # characters per info line, dots included; 66 * 0.6em * 14px fits inside 985px
+# Every line gets an exact textLength, so the card has the same geometry whether the
+# viewer's monospace font is Consolas (0.55em wide), Menlo or DejaVu (0.6em).
+ART_FONT, ART_LINE, ART_CHAR = 10, 12, 6.0
+INFO_FONT, INFO_LINE, INFO_CHAR = 14, 21, 8.4
+INFO_COLS = 62  # characters per info line, dots included
 
 THEMES = {
-    "dark": dict(bg="#161b22", text="#c9d1d9", key="#ffa657", value="#a5d6ff", dots="#616e7f", art="#c9d1d9"),
-    "light": dict(bg="#f6f8fa", text="#24292f", key="#953800", value="#0a3069", dots="#c2cfde", art="#24292f"),
+    "dark": dict(bg="#161b22", text="#c9d1d9", key="#ffa657", value="#a5d6ff", dots="#616e7f",
+                 head="#8b949e", art="#c9d1d9"),
+    "light": dict(bg="#f6f8fa", text="#24292f", key="#953800", value="#0a3069", dots="#c2cfde",
+                  head="#57606a", art="#24292f"),
 }
 
 
@@ -124,13 +138,13 @@ def pair(k1, v1, id1, k2, v2, id2):
 
 
 def header(title):
-    return [("cc", f"- {title} " + "-" * (INFO_COLS - len(title) - 3), None)]
+    return [("cc", "- ", None), ("head", title, None), ("cc", " " + "-" * (INFO_COLS - len(title) - 3), None)]
 
 
 def info_lines(stats, up):
     return [
         [("text", "rohan@sainju", None), ("cc", " " + "-" * (INFO_COLS - 13), None)],
-        field("OS", "Morgan State University, B.S. Computer Science (Dec 2026)"),
+        field("OS", "Morgan State University, B.S. CS (Dec 2026)"),
         field("Uptime", up, "age"),
         field("Host", "CAPC Lab, Open LLM Evaluation research"),
         field("Kernel", "Software Engineering / Data Engineering / AI"),
@@ -146,7 +160,14 @@ def info_lines(stats, up):
         [],
         header("GitHub Stats"),
         pair("Repos", f"{stats['repos']:,}", "repo", "Commits", f"{stats['commits']:,}", "commit"),
+        pair("PRs.Merged", f"{stats['prs_merged']:,}", "pr", "PRs.External", f"{stats['prs_external']:,}", "ext_pr"),
     ]
+
+
+def first_baseline(n_lines, line, font):
+    """Baseline of the first line when n_lines are centered vertically on the card."""
+    top = (HEIGHT - n_lines * line) / 2
+    return top + (line - font) / 2 + font * 0.8
 
 
 def render(theme, stats, up):
@@ -160,19 +181,32 @@ def render(theme, stats, up):
         f'<svg xmlns="{SVG_NS}" font-family="Consolas, Menlo, \'DejaVu Sans Mono\', \'Courier New\', monospace" '
         f'width="{WIDTH}px" height="{HEIGHT}px" font-size="{INFO_FONT}px">',
         "<style>",
-        f".key {{fill: {c['key']};}} .value {{fill: {c['value']};}} .cc {{fill: {c['dots']};}}",
+        f".key {{fill: {c['key']};}} .value {{fill: {c['value']};}} .cc {{fill: {c['dots']};}} "
+        f".head {{fill: {c['head']};}}",
         f"text, tspan {{white-space: pre;}}",
         "</style>",
         f'<rect width="{WIDTH}px" height="{HEIGHT}px" fill="{c["bg"]}" rx="15"/>',
-        f'<text x="{ART_X}" y="{ART_Y}" fill="{c["art"]}" font-size="{ART_FONT}px" xml:space="preserve">',
     ]
+
+    # Horizontal: equal space left of the art, between art and panel, and right of the panel.
+    art_w = max(map(len, art)) * ART_CHAR
+    info_w = INFO_COLS * INFO_CHAR
+    gap = (WIDTH - art_w - info_w) / 3
+    art_x, info_x = gap, 2 * gap + art_w
+
+    y0 = first_baseline(len(art), ART_LINE, ART_FONT)
+    out.append(f'<g fill="{c["art"]}" font-size="{ART_FONT}px">')
     for i, row in enumerate(art):
-        out.append(f'<tspan x="{ART_X}" y="{ART_Y + i * ART_LINE}">{escape(row)}</tspan>')
-    out.append("</text>")
+        if row:
+            out.append(
+                f'<text x="{art_x:.1f}" y="{y0 + i * ART_LINE:.1f}" textLength="{len(row) * ART_CHAR:.1f}" '
+                f'lengthAdjust="spacing" xml:space="preserve">{escape(row)}</text>'
+            )
+    out.append("</g>")
 
     lines = info_lines(stats, up)
-    info_y = (HEIGHT - (len(lines) - 1) * INFO_LINE) // 2 + 4
-    out.append(f'<text x="{INFO_X}" y="{info_y}" fill="{c["text"]}" xml:space="preserve">')
+    y0 = first_baseline(len(lines), INFO_LINE, INFO_FONT)
+    out.append(f'<g fill="{c["text"]}">')
     for i, runs in enumerate(lines):
         if not runs:
             continue
@@ -181,8 +215,12 @@ def render(theme, stats, up):
             attrs = f' class="{cls}"' if cls != "text" else ""
             attrs += f' id="{id_}"' if id_ else ""
             spans.append(f"<tspan{attrs}>{escape(text)}</tspan>")
-        out.append(f'<tspan x="{INFO_X}" y="{info_y + i * INFO_LINE}">{"".join(spans)}</tspan>')
-    out.append("</text>")
+        width = sum(len(text) for _, text, _ in runs) * INFO_CHAR
+        out.append(
+            f'<text x="{info_x:.1f}" y="{y0 + i * INFO_LINE:.1f}" textLength="{width:.1f}" '
+            f'lengthAdjust="spacing" xml:space="preserve">{"".join(spans)}</text>'
+        )
+    out.append("</g>")
     out.append("</svg>")
     return "\n".join(out) + "\n"
 
@@ -226,6 +264,8 @@ def main():
         "age": up,
         "repo": f"{stats['repos']:,}",
         "commit": f"{stats['commits']:,}",
+        "pr": f"{stats['prs_merged']:,}",
+        "ext_pr": f"{stats['prs_external']:,}",
     }
     for path, theme in FILES.items():
         if args.rebuild or not os.path.exists(path):

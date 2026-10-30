@@ -1,66 +1,64 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <svg xmlns="http://www.w3.org/2000/svg" font-family="Consolas, Menlo, 'DejaVu Sans Mono', 'Courier New', monospace" width="985px" height="530px" font-size="14px">
 <style>
-.key {fill: #ffa657;} .value {fill: #a5d6ff;} .cc {fill: #616e7f;}
+.key {fill: #ffa657;} .value {fill: #a5d6ff;} .cc {fill: #616e7f;} .head {fill: #8b949e;}
 text, tspan {white-space: pre;}
 </style>
 <rect width="985px" height="530px" fill="#161b22" rx="15" />
-<text x="20" y="29" fill="#c9d1d9" font-size="10px" xml:space="preserve">
-<tspan x="20" y="29" />
-<tspan x="20" y="41" />
-<tspan x="20" y="53">                Oxoazo+,~;~=.vLxUw</tspan>
-<tspan x="20" y="65">              oJ-.,=--,..  ..   -zozv0O</tspan>
-<tspan x="20" y="77">            m ~,,;;*,;=~=-;;-~;;,,,,.  . ~c</tspan>
-<tspan x="20" y="89">         aY:,-,:-;-~~~~~+;=+==+~-~~;;;;:. :,==Y</tspan>
-<tspan x="20" y="101">      zY o= :;;-~=+==~*=***=-+++==~==~~;~;,,  :Y</tspan>
-<tspan x="20" y="113">     vz+::~:-~~+===~~===-v*-~============~~;::. v</tspan>
-<tspan x="20" y="125">     ., :;;~~~~======+=++==========++======~;:,.+a</tspan>
-<tspan x="20" y="137">   *, .;-~~~========~=+===~~~==~====++======~;:. :x</tspan>
-<tspan x="20" y="149">  C~. :-~~==~==~~~~~-~-;;:;--~~~-=c~~~~~~===~--;  x</tspan>
-<tspan x="20" y="161">  Ov.,;-~~=~-~-;;;;;,.:-~o=::.,;=-=~~-;;~=~==~-;. =</tspan>
-<tspan x="20" y="173">   =..,--~~~~::-ozo*ccoUUwbJxv;,-;=*vo*;.,;--~;:. :</tspan>
-<tspan x="20" y="185">   o. ,:;--~,,YQOZppwmOwwZmZOwqmmmm0COm0z; .:;;,</tspan>
-<tspan x="20" y="197">       .::,~*Y0wZmqmmwwwwqwqwwqpkkkpwk#BhbC- ,,. .</tspan>
-<tspan x="20" y="209">    0.  . v0mOZm0ZwZmZOwdwqpmZmQwbbbqpdbbbW@C .  .</tspan>
-<tspan x="20" y="221">     = . +mQOQ0qmm0OqZOppwqppwkdkWWWBh#hk#B#@q:  .</tspan>
-<tspan x="20" y="233">       . UwZZZmqppdpwhWddkkd@##wOLa*JCOwBWB%@@U .</tspan>
-<tspan x="20" y="245">      Y ,qmwdbbZqw00wd#pb%mxxa;..;~*C0LxL#h#@@m . ;WW#@</tspan>
-<tspan x="20" y="257">       -.Oqb0*= .,.;-~vQUdbOLQQJCLLQOpdbpbbh@@b   JWz,p</tspan>
-<tspan x="20" y="269">         U%hUJqOLLCavaYUUwhw00Y,oY  =v-awBBB@%@~*d%#Z:J</tspan>
-<tspan x="20" y="281">     @Qq,-@pq#z-Y=.,x;-aow@kCYY*=Y0wppB%#W@WWW@mmwcOBcp</tspan>
-<tspan x="20" y="293">     % JL,bqwOzLZmZZYx0JCq@@#pmqqpdhhB%#h##%#k@mZ@Q:Cx@</tspan>
-<tspan x="20" y="305">     @c,qYZkpkW###Bhdqkmmq@@W#kwk#kbk#qbBbdkdhWObqxOUZ@</tspan>
-<tspan x="20" y="317">      @=LcJBwppbbbbkdhd0OB@@@#dwwbhBhBBhBbhhbkbqdJdkUW</tspan>
-<tspan x="20" y="329">       @**+bqOOwbbkdddZQh@@@@@@@#mkbkhhbkbbBhppmCZw0Z@</tspan>
-<tspan x="20" y="341">        q;CJBZZmbdkkbdpkph@#B0Qmkd#hbhbpbdbBkqwJ%@W%@</tspan>
-<tspan x="20" y="353">        @vvzJqmmwqqdkdhm*-vLa=+Yp@@WWBbbpdkkppZJ@</tspan>
-<tspan x="20" y="365">         @wwbJZ0Q0wkdbbQv*v~+0LLJCOLwwk#Bkbbdw0L#</tspan>
-<tspan x="20" y="377">             mxLZZwZJvoUC0OQZmZZQJ*:oaq%hkbpwOmUh</tspan>
-<tspan x="20" y="389">              UYZZwJv;+xUxaJJUUQCYzUOqp#kkkpZ0Ca#</tspan>
-<tspan x="20" y="401">               YzCwQOpZCQmm0ZmmwZdB@@hbdbqOZQxCJb</tspan>
-<tspan x="20" y="413">                Y=CLJdhhdQCY++xLpbpdp00ZZ0JYaL0wL</tspan>
-<tspan x="20" y="425">                  ~*ozOpdbqmZwpBWhBkbqCJUooaJO0md</tspan>
-<tspan x="20" y="437">                  h,~~QpmwdpB@%@hddkLa*=vca0mZ0mm     U</tspan>
-<tspan x="20" y="449">                  m*xv+azzCwOCJQLa*v~:=cxCQZqmZ0*      ,L</tspan>
-<tspan x="20" y="461">                  =~JCCx*c+++~;~=+*+ozCQ0ZwwZOU-k   m .  :L</tspan>
-<tspan x="20" y="473">              U   o aJL0JzUCQLLZZO0QQ0OZmmZZL=:     o . .  :C</tspan>
-<tspan x="20" y="485">            x     w :xQ0QUULQQ0OZZZOQOL0mZ0Y:c      .  .:::.</tspan>
-<tspan x="20" y="497">              .;   , ~YCQZJzQ0ZZmwZwOQOmmLx,Y        ..:;----</tspan>
-</text>
-<text x="405" y="101" fill="#c9d1d9" xml:space="preserve">
-<tspan x="405" y="101"><tspan>rohan@sainju</tspan><tspan class="cc"> -----------------------------------------------------</tspan></tspan>
-<tspan x="405" y="122"><tspan class="cc">. </tspan><tspan class="key">OS</tspan><tspan class="cc">:</tspan><tspan class="cc"> .. </tspan><tspan class="value">Morgan State University, B.S. Computer Science (Dec 2026)</tspan></tspan>
-<tspan x="405" y="143"><tspan class="cc">. </tspan><tspan class="key">Uptime</tspan><tspan class="cc">:</tspan><tspan class="cc" id="age_dots"> ........................... </tspan><tspan class="value" id="age_data">23 years, 10 months, 14 days</tspan></tspan>
-<tspan x="405" y="164"><tspan class="cc">. </tspan><tspan class="key">Host</tspan><tspan class="cc">:</tspan><tspan class="cc"> ................... </tspan><tspan class="value">CAPC Lab, Open LLM Evaluation research</tspan></tspan>
-<tspan x="405" y="185"><tspan class="cc">. </tspan><tspan class="key">Kernel</tspan><tspan class="cc">:</tspan><tspan class="cc"> ........... </tspan><tspan class="value">Software Engineering / Data Engineering / AI</tspan></tspan>
-<tspan x="405" y="206"><tspan class="cc">. </tspan><tspan class="key">IDE</tspan><tspan class="cc">:</tspan><tspan class="cc"> ................................................... </tspan><tspan class="value">VS Code</tspan></tspan>
-<tspan x="405" y="248"><tspan class="cc">. </tspan><tspan class="key">Languages.Programming</tspan><tspan class="cc">:</tspan><tspan class="cc"> ......... </tspan><tspan class="value">Python, Go, Scala, SQL, Haskell</tspan></tspan>
-<tspan x="405" y="269"><tspan class="cc">. </tspan><tspan class="key">Languages.Web/Cloud</tspan><tspan class="cc">:</tspan><tspan class="cc"> ................................ </tspan><tspan class="value">React, AWS</tspan></tspan>
-<tspan x="405" y="290"><tspan class="cc">. </tspan><tspan class="key">Languages.Real</tspan><tspan class="cc">:</tspan><tspan class="cc"> ................................ </tspan><tspan class="value">English, Nepali</tspan></tspan>
-<tspan x="405" y="332"><tspan class="cc">- Contact --------------------------------------------------------</tspan></tspan>
-<tspan x="405" y="353"><tspan class="cc">. </tspan><tspan class="key">Email.Personal</tspan><tspan class="cc">:</tspan><tspan class="cc"> ......................... </tspan><tspan class="value">rohansainju7@gmail.com</tspan></tspan>
-<tspan x="405" y="374"><tspan class="cc">. </tspan><tspan class="key">LinkedIn</tspan><tspan class="cc">:</tspan><tspan class="cc"> .......................... </tspan><tspan class="value">linkedin.com/in/rohansainju</tspan></tspan>
-<tspan x="405" y="416"><tspan class="cc">- GitHub Stats ---------------------------------------------------</tspan></tspan>
-<tspan x="405" y="437"><tspan class="cc">. </tspan><tspan class="key">Repos</tspan><tspan class="cc">:</tspan><tspan class="cc" id="repo_dots"> ................... </tspan><tspan class="value" id="repo_data">11</tspan><tspan class="cc"> | </tspan><tspan class="key">Commits</tspan><tspan class="cc">:</tspan><tspan class="cc" id="commit_dots"> ................... </tspan><tspan class="value" id="commit_data">247</tspan></tspan>
-</text>
+<g fill="#c9d1d9" font-size="10px">
+<text x="42.7" y="52.0" textLength="192.0" lengthAdjust="spacing" xml:space="preserve">              . .:,..          .</text>
+<text x="42.7" y="64.0" textLength="216.0" lengthAdjust="spacing" xml:space="preserve">            : ...;..,,,:...,,...   .</text>
+<text x="42.7" y="76.0" textLength="240.0" lengthAdjust="spacing" xml:space="preserve">           . ...,,,,,.:,.:::::,,,,......</text>
+<text x="42.7" y="88.0" textLength="264.0" lengthAdjust="spacing" xml:space="preserve">       -  ....,,:,,,::;-,;:,:;:,,,,,,,..,. .</text>
+<text x="42.7" y="100.0" textLength="264.0" lengthAdjust="spacing" xml:space="preserve">     ..:..,,,:::,,,,,:,,*,,,:,,::,,,:,,,,,,.</text>
+<text x="42.7" y="112.0" textLength="276.0" lengthAdjust="spacing" xml:space="preserve">   ,  ...,,,,,,,,,,:,:::::,,,,,,::::,,,,,,,,..</text>
+<text x="42.7" y="124.0" textLength="282.0" lengthAdjust="spacing" xml:space="preserve">    ..,,,,,,::::::,::::::,,,:,,,,,,::::::,,,,..</text>
+<text x="42.7" y="136.0" textLength="288.0" lengthAdjust="spacing" xml:space="preserve">   ..,,,,,,,,,,,,,,,:,,,,,,,,,,,,-,,::,,,,,,,,..</text>
+<text x="42.7" y="148.0" textLength="288.0" lengthAdjust="spacing" xml:space="preserve">. ..,,,,:,,,,,,..,.... . ....,,,,:;,,,,,,::,,,.,</text>
+<text x="42.7" y="160.0" textLength="288.0" lengthAdjust="spacing" xml:space="preserve">  ..,,,,,,,,..,,,.  .::*Y-,.   ,.,,,:,...,,,,:..</text>
+<text x="42.7" y="172.0" textLength="288.0" lengthAdjust="spacing" xml:space="preserve">   ..,,,,,. ,-vov*cc*ozxOpxov-,;:;~=**~,  ....,.</text>
+<text x="42.7" y="184.0" textLength="288.0" lengthAdjust="spacing" xml:space="preserve">    ...,.. -zJJCmm00J00OCJUJOwwmwm0xY0OCx:   ...</text>
+<text x="42.7" y="196.0" textLength="264.0" lengthAdjust="spacing" xml:space="preserve">     .. ,;coCLUCQJCLQLLQQ0ZLQLLwqwqQZdhdpdL;</text>
+<text x="42.7" y="208.0" textLength="270.0" lengthAdjust="spacing" xml:space="preserve">       ,zULzLUzJQJCCUCmOL00JJQzCwqqZ0Ommwmh@Q</text>
+<text x="42.7" y="220.0" textLength="282.0" lengthAdjust="spacing" xml:space="preserve">      .YUzUxCOLLYU0LY0Z0QOOZQpZqk#BhddkqpBbb@k;</text>
+<text x="42.7" y="232.0" textLength="282.0" lengthAdjust="spacing" xml:space="preserve">      -QUCUJC0Q0OOLZhd0pwpq@h%m0Jx-vxUQqhhb#@@0</text>
+<text x="42.7" y="244.0" textLength="330.0" lengthAdjust="spacing" xml:space="preserve">      YOCOZqq0pmOCZp@dQ@qU=o+,     :v*+-CBdh@@#.    @@@</text>
+<text x="42.7" y="256.0" textLength="336.0" lengthAdjust="spacing" xml:space="preserve">      a0Lwa=, .  .:,;zzUkLococcaaCLZdWWp0wqp@@@.   zk+ b</text>
+<text x="42.7" y="268.0" textLength="336.0" lengthAdjust="spacing" xml:space="preserve">      -kbQ:=ac*vo*;~*vcaZw0CUz:;o   ;,.c0ddd@#@* -O@d= v</text>
+<text x="42.7" y="280.0" textLength="336.0" lengthAdjust="spacing" xml:space="preserve">   hp  #kLZhY=a;, =:.*=ob#Yco~ ,c+*oJYCwdB#BBW@h-BUobk.J</text>
+<text x="42.7" y="292.0" textLength="336.0" lengthAdjust="spacing" xml:space="preserve">  # zc LkJmo.:x=~++;-*~ad@@QoYUco0pbqB@#kB@%BkB@chx=;C~@</text>
+<text x="42.7" y="304.0" textLength="336.0" lengthAdjust="spacing" xml:space="preserve">  @ ;J*cBJOQqdmddwUxZQYLp@@##ZQdkpmqbbmdbdwhbphb+@h=;a*@</text>
+<text x="42.7" y="316.0" textLength="330.0" lengthAdjust="spacing" xml:space="preserve">  @z Jz=hOwphdhdpdpmdLCJb@@kqq0ZddbpddZpdmqpOpkmLb,OO+k</text>
+<text x="42.7" y="328.0" textLength="330.0" lengthAdjust="spacing" xml:space="preserve">   @o==,kLQUOOwZwwZpmYaw%@@@@qOQOwddddkddppdpqm00xOpCaW</text>
+<text x="42.7" y="340.0" textLength="330.0" lengthAdjust="spacing" xml:space="preserve">    @=;:chJUUQpqdqZwLUmW@@@@@@@@JwqwppqmqmqdbOmLYYQUCm@</text>
+<text x="42.7" y="352.0" textLength="318.0" lengthAdjust="spacing" xml:space="preserve">     @ vcCwJJQZZwpqpObCJqkp0**o0qBhqqbZZwmqdpO0aC@@@@</text>
+<text x="42.7" y="364.0" textLength="294.0" lengthAdjust="spacing" xml:space="preserve">      Y c+U0CCL0QZwwqq+..-a;;;c0B@BWhpwqOwppOZLaC</text>
+<text x="42.7" y="376.0" textLength="294.0" lengthAdjust="spacing" xml:space="preserve">       dLpJoJzzYQpZwqJ*,=:,;JxxvcxxaOChkkqmww0UzY</text>
+<text x="42.7" y="388.0" textLength="294.0" lengthAdjust="spacing" xml:space="preserve">           *vxCU0Ca~-*vzLUULQCLYx=,,*+h#pqqO0JJYo</text>
+<text x="42.7" y="400.0" textLength="294.0" lengthAdjust="spacing" xml:space="preserve">           d aJJQo~.,+c*-=oc*+oo*~=+QJphqppmJJxco</text>
+<text x="42.7" y="412.0" textLength="300.0" lengthAdjust="spacing" xml:space="preserve">            m xaQYxJz*oYQCULQOZC0p@@WdqqwOLJJ**ox@</text>
+<text x="42.7" y="424.0" textLength="294.0" lengthAdjust="spacing" xml:space="preserve">             q  Uzxp#dwJao*;-+oCwmmqQYJJ0Jox=vYzO</text>
+<text x="42.7" y="436.0" textLength="294.0" lengthAdjust="spacing" xml:space="preserve">               = +~cxQqm0CacvUZhqqmqZYaYo*+~+YUYd</text>
+<text x="42.7" y="448.0" textLength="294.0" lengthAdjust="spacing" xml:space="preserve">                z :;awLZZOOB@h@BpbhZJx~-~;~azJUYq</text>
+<text x="42.7" y="460.0" textLength="294.0" lengthAdjust="spacing" xml:space="preserve">                #,;,,azxYZwmqwkmUozo,..:=*cU0QYUC</text>
+<text x="42.7" y="472.0" textLength="300.0" lengthAdjust="spacing" xml:space="preserve">                 :vv+;:-;~c=:,:-:..,:-+*oYLLLJJx q</text>
+<text x="42.7" y="484.0" textLength="294.0" lengthAdjust="spacing" xml:space="preserve">                  *vax*~==-~~~++*ocvazYJLLCQJx*.Z</text>
+</g>
+<g fill="#c9d1d9">
+<text x="421.5" y="90.7" textLength="520.8" lengthAdjust="spacing" xml:space="preserve"><tspan>rohan@sainju</tspan><tspan class="cc"> -------------------------------------------------</tspan></text>
+<text x="421.5" y="111.7" textLength="520.8" lengthAdjust="spacing" xml:space="preserve"><tspan class="cc">. </tspan><tspan class="key">OS</tspan><tspan class="cc">:</tspan><tspan class="cc"> ............ </tspan><tspan class="value">Morgan State University, B.S. CS (Dec 2026)</tspan></text>
+<text x="421.5" y="132.7" textLength="520.8" lengthAdjust="spacing" xml:space="preserve"><tspan class="cc">. </tspan><tspan class="key">Uptime</tspan><tspan class="cc">:</tspan><tspan class="cc" id="age_dots"> ....................... </tspan><tspan class="value" id="age_data">23 years, 10 months, 15 days</tspan></text>
+<text x="421.5" y="153.7" textLength="520.8" lengthAdjust="spacing" xml:space="preserve"><tspan class="cc">. </tspan><tspan class="key">Host</tspan><tspan class="cc">:</tspan><tspan class="cc"> ............... </tspan><tspan class="value">CAPC Lab, Open LLM Evaluation research</tspan></text>
+<text x="421.5" y="174.7" textLength="520.8" lengthAdjust="spacing" xml:space="preserve"><tspan class="cc">. </tspan><tspan class="key">Kernel</tspan><tspan class="cc">:</tspan><tspan class="cc"> ....... </tspan><tspan class="value">Software Engineering / Data Engineering / AI</tspan></text>
+<text x="421.5" y="195.7" textLength="520.8" lengthAdjust="spacing" xml:space="preserve"><tspan class="cc">. </tspan><tspan class="key">IDE</tspan><tspan class="cc">:</tspan><tspan class="cc"> ............................................... </tspan><tspan class="value">VS Code</tspan></text>
+<text x="421.5" y="237.7" textLength="520.8" lengthAdjust="spacing" xml:space="preserve"><tspan class="cc">. </tspan><tspan class="key">Languages.Programming</tspan><tspan class="cc">:</tspan><tspan class="cc"> ..... </tspan><tspan class="value">Python, Go, Scala, SQL, Haskell</tspan></text>
+<text x="421.5" y="258.7" textLength="520.8" lengthAdjust="spacing" xml:space="preserve"><tspan class="cc">. </tspan><tspan class="key">Languages.Web/Cloud</tspan><tspan class="cc">:</tspan><tspan class="cc"> ............................ </tspan><tspan class="value">React, AWS</tspan></text>
+<text x="421.5" y="279.7" textLength="520.8" lengthAdjust="spacing" xml:space="preserve"><tspan class="cc">. </tspan><tspan class="key">Languages.Real</tspan><tspan class="cc">:</tspan><tspan class="cc"> ............................ </tspan><tspan class="value">English, Nepali</tspan></text>
+<text x="421.5" y="321.7" textLength="520.8" lengthAdjust="spacing" xml:space="preserve"><tspan class="cc">- </tspan><tspan class="head">Contact</tspan><tspan class="cc"> ----------------------------------------------------</tspan></text>
+<text x="421.5" y="342.7" textLength="520.8" lengthAdjust="spacing" xml:space="preserve"><tspan class="cc">. </tspan><tspan class="key">Email.Personal</tspan><tspan class="cc">:</tspan><tspan class="cc"> ..................... </tspan><tspan class="value">rohansainju7@gmail.com</tspan></text>
+<text x="421.5" y="363.7" textLength="520.8" lengthAdjust="spacing" xml:space="preserve"><tspan class="cc">. </tspan><tspan class="key">LinkedIn</tspan><tspan class="cc">:</tspan><tspan class="cc"> ...................... </tspan><tspan class="value">linkedin.com/in/rohansainju</tspan></text>
+<text x="421.5" y="405.7" textLength="520.8" lengthAdjust="spacing" xml:space="preserve"><tspan class="cc">- </tspan><tspan class="head">GitHub Stats</tspan><tspan class="cc"> -----------------------------------------------</tspan></text>
+<text x="421.5" y="426.7" textLength="520.8" lengthAdjust="spacing" xml:space="preserve"><tspan class="cc">. </tspan><tspan class="key">Repos</tspan><tspan class="cc">:</tspan><tspan class="cc" id="repo_dots"> ................. </tspan><tspan class="value" id="repo_data">11</tspan><tspan class="cc"> | </tspan><tspan class="key">Commits</tspan><tspan class="cc">:</tspan><tspan class="cc" id="commit_dots"> ................. </tspan><tspan class="value" id="commit_data">247</tspan></text>
+<text x="421.5" y="447.7" textLength="520.8" lengthAdjust="spacing" xml:space="preserve"><tspan class="cc">. </tspan><tspan class="key">PRs.Merged</tspan><tspan class="cc">:</tspan><tspan class="cc" id="pr_dots"> ............ </tspan><tspan class="value" id="pr_data">19</tspan><tspan class="cc"> | </tspan><tspan class="key">PRs.External</tspan><tspan class="cc">:</tspan><tspan class="cc" id="ext_pr_dots"> .............. </tspan><tspan class="value" id="ext_pr_data">7</tspan></text>
+</g>
 </svg>
